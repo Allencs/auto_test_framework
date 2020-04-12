@@ -1,0 +1,40 @@
+excel:
+  excelname: cases.xlsx
+  actuall_col: 7
+  result_col: 8
+
+msg:
+  success_result: Pass
+  fail_result: Fail
+
+log:
+  logger_name: api_test
+  log_level: DEBUG
+  formatter: '%(asctime)s - %(name)s - [%(filename)s-->line:%(lineno)d] - %(levelname)s: %(message)s'
+  output_level: DEBUG
+  filelog_name: api_test.log
+  file_level: DEBUG
+
+report:
+  name: report
+  title: 'python23期第一份测试报告'
+  description: '该份测试报告主要内容为注册案例测试结果'
+  tester: '七月'
+
+mysql:
+  host: '***'
+  user: 'future'
+  password: '123456'
+  db: 'futureloan'
+  port: 3306
+  select_user_sql: "select * from member where mobile_phone= %s;"
+  select_userid_sql: "select id from member where mobile_phone= %s;"
+  select_maxuserid_sql: "SELECT MAX(id) FROM member;"
+
+api:
+  version: {'X-Lemonban-Media-Type': 'lemonban.v2'}
+  prefix: http://192.168.3.20:30001/pftest/myApi
+
+
+
+
