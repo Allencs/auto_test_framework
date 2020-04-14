@@ -18,7 +18,6 @@ class Configuration(object):
     def __init__(self, filename):
         with open(filename, encoding='utf-8') as one_file:
             self.data = yaml.full_load(one_file)
-    pass
 
     def getConfig(self, section, option):
         return self.data[section][option]

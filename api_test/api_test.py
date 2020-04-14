@@ -1,9 +1,10 @@
 import os
+import sys
 import unittest
 from datetime import datetime
 from auto_test.auto_test import AutoTest, CreateTest
 from configuration.config import configuration
-from configuration.path import CASES_DIR, REPORTS_FILE_PATH
+from configuration.path import REPORTS_FILE_PATH, API_CASES_DIR
 from libs.HTMLTestRunnerNew import HTMLTestRunner
 
 
@@ -11,12 +12,12 @@ class APITest(AutoTest):
     """
     Concrete API test class
     """
-    def __init__(self, cases_dir=None, report_name=None):
+    def __init__(self, cases_dir=None, cases=None, report_name=None):
         super().__init__()
         if cases_dir is not None:
             self.cases_dir = cases_dir
         else:
-            self.cases_dir = CASES_DIR
+            self.cases_dir = API_CASES_DIR
         if report_name is not None:
             r_name = report_name + '.html'
             self.report_name = os.path.join(REPORTS_FILE_PATH, r_name)
@@ -24,9 +25,15 @@ class APITest(AutoTest):
             r_name = configuration.getConfig('report', 'name') + '_' + \
                              datetime.strftime(datetime.now(), '%Y%m%d%H%M%S') + '.html'
             self.report_name = os.path.join(REPORTS_FILE_PATH, r_name)
+        if cases is not None:
+            self.cases = cases
 
     def run(self):
-        suite = unittest.defaultTestLoader.discover(self.cases_dir)
+        if self.cases is None:
+            suite = unittest.defaultTestLoader.discover(self.cases_dir)
+        else:
+            sys.path.append(self.cases_dir)
+            suite = unittest.TestLoader().loadTestsFromNames(self.cases)
         runner = HTMLTestRunner(stream=open(self.report_name, 'wb'),
                                 verbosity=2,
                                 title=configuration.getConfig('report', 'title'),

@@ -69,7 +69,7 @@ Version 0.8.2
 * Show output inline instead of popup window (Viorel Lupu).
 Version in 0.8.1
 * Validated XHTML (Wolfgang Borgert).
-* Added description of test classes and test test_set.
+* Added description of test classes and test cases.
 Version in 0.8.0
 * Define Template_mixin class for customization.
 * Workaround a IE 6 bug that it does not treat <script> block as CDATA.
@@ -92,7 +92,7 @@ from xml.sax import saxutils
 # ------------------------------------------------------------------------
 # The redirectors below are used to capture output during testing. Output
 # sent to sys.stdout and sys.stderr are automatically captured. However
-# in some test_set sys.stdout is already cached before HTMLTestRunner is
+# in some cases sys.stdout is already cached before HTMLTestRunner is
 # invoked (e.g. calling logging.basicConfig). In order to capture those
 # output, use the redirectors for the cached stream.
 #
@@ -119,7 +119,6 @@ stderr_redirector = OutputRedirector(sys.stderr)
 
 # ----------------------------------------------------------------------
 # Template
-
 
 class Template_mixin(object):
     """

@@ -1,5 +1,4 @@
 import pymysql
-import random
 from configuration.config import configuration
 
 

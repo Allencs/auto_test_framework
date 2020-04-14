@@ -24,3 +24,6 @@ CONFIG_USER_ACCOUNT_FILE_PATH = os.path.join(CONFIG_DIR, 'users.yaml')
 
 # 获取测试用例类所在的路径
 CASES_DIR = os.path.join(BASE_DIR, 'test_set')
+
+#
+API_CASES_DIR = os.path.join(CASES_DIR, 'api_test')

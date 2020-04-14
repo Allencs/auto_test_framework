@@ -17,9 +17,9 @@ log:
 
 report:
   name: report
-  title: 'python23期第一份测试报告'
-  description: '该份测试报告主要内容为注册案例测试结果'
-  tester: '七月'
+  title: '测试报告'
+  description: '该份测试报告主要内容为example测试结果'
+  tester: 'allen'
 
 mysql:
   host: '***'
@@ -33,7 +33,7 @@ mysql:
 
 api:
   version: {'X-Lemonban-Media-Type': 'lemonban.v2'}
-  prefix: http://192.168.3.20:30001/pftest/myApi
+  prefix: http://localhost:8080/pftest/myApi
 
 
 

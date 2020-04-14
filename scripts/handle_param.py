@@ -9,10 +9,10 @@ class HandleParameterize:
     参数化类
     """
     not_existed_mobile_pattern = r'{not_existed_tel}'
-    invested_user_mobile_pattern=r'{invest_user_tel}'
-    invested_user_pwd_pattern=r'{invest_user_pwd}'
-    invested_user_id_pattern=r'{invest_user_id}'
-    no_exsited_user_id_pattern=r'{no_exsited_invest_user_id}'
+    invested_user_mobile_pattern = r'{invest_user_tel}'
+    invested_user_pwd_pattern = r'{invest_user_pwd}'
+    invested_user_id_pattern = r'{invest_user_id}'
+    no_exsited_user_id_pattern = r'{no_exsited_invest_user_id}'
 
     configuration = Configuration(CONFIG_USER_ACCOUNT_FILE_PATH)
 
@@ -30,7 +30,7 @@ class HandleParameterize:
 
         # 替换投资人密码
         if re.search(cls.invested_user_pwd_pattern, data):
-            data = re.sub(cls.invested_user_pwd_pattern, cls.configuration.getConfig('Invest','pwd'), data)
+            data = re.sub(cls.invested_user_pwd_pattern, cls.configuration.getConfig('Invest', 'pwd'), data)
 
         # 替换投资人id
         if re.search(cls.invested_user_id_pattern, data):
