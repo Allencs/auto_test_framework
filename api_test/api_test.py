@@ -32,7 +32,7 @@ class APITest(AutoTest):
         if self.cases is None:
             suite = unittest.defaultTestLoader.discover(self.cases_dir)
         else:
-            sys.path.append(self.cases_dir)
+            sys.path.insert(0, self.cases_dir)
             suite = unittest.TestLoader().loadTestsFromNames(self.cases)
         runner = HTMLTestRunner(stream=open(self.report_name, 'wb'),
                                 verbosity=2,
