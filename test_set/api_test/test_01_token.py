@@ -73,7 +73,7 @@ class TestTokenCase(unittest.TestCase):
             # 将实际值写入到result_col列
             self.do_excel.write_to_file(row=row, column=configuration.getConfig('excel', 'result_col'),
                                         value=failed_msg)
-            log.error(f'{title}，执行的结果为：{failed_msg}\n具体异常为：{e}\n')
+            log.error(f'{title}，执行的结果为：{failed_msg}\n具体异常为：{e}')
             raise e
         else:
             # 将实际值写入到actual_rol列
@@ -82,4 +82,4 @@ class TestTokenCase(unittest.TestCase):
             # 将实际结论写入到result_col列
             self.do_excel.write_to_file(row=row, column=configuration.getConfig('excel', 'result_col'),
                                         value=success_msg)
-            log.info(f'{title}，执行的结果为：{success_msg}\n')
+            log.info(f'{title}，执行的结果为：{success_msg}')

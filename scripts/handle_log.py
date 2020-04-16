@@ -39,6 +39,3 @@ class HandleLog(object):
 
 log = HandleLog.creat_logger()
 
-# if __name__ == '__main__':
-#     log = MyLogger.creat_logger()
-#     log.info('这是我封装的日志模块')
